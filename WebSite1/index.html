@@ -1,0 +1,206 @@
+﻿
+<html>
+    <head>
+        <title>Custom Animation Banner with jQuery</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="description" content="Custom Animation Banner with jQuery" />
+        <meta name="keywords" content="jquery, animation, banner, customize, css3, fadein, slider, slideshow"/>
+		<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon"/>
+        <link rel="stylesheet" href="css/style.css" type="text/css" media="screen"/
+		<script src="js/cufon-yui.js" type="text/javascript"></script>
+		<script src="js/Bebas_400.font.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			Cufon.replace('a, li, h1');
+			Cufon('h1',{
+				textShadow: '1px 1px #fff'
+			});
+		</script>
+        <style type="text/css">
+			*{
+				margin:0;
+				padding:0;
+			}
+			body{
+				background:#f9f9f9 url(background.jpg) repeat top left;
+				font-family:Arial, Helvetica, sans-serif;
+				font-size:30px;
+				color: black;
+				padding:21px;
+			}
+            input{
+				background:#f9f9f9 url(background.jpg) repeat top left;
+				font-family:Arial, Helvetica, sans-serif;
+				font-size:30px;
+				color: black;
+				padding:20px;
+			}
+			h1{
+				font-weight:normal;
+				color:blue;
+				font-size:35px;
+				word-spacing:6px;
+				margin-left:20px;
+			}
+			span.reference{
+				font-family:Arial;
+				position:fixed;
+				left:10px;
+				bottom:10px;
+				font-size:12px;
+			}
+			span.reference a{
+				color: blue;
+				text-transform:uppercase;
+				text-decoration:none;
+			}
+			.ca_banner{
+				margin:20px;
+				float:left;
+			}
+			.content{
+				width:960px;
+				margin:0 auto;
+			}
+		</style>
+    </head>
+
+    <body>
+        <form name="calculator">
+            <input type="button" value="1" onClick="document.calculator.ans.value+='1'" />
+            <input type="button" value="2" onClick="document.calculator.ans.value+='2'" />
+            <input type="button" value="3" onClick="document.calculator.ans.value+='3'" />
+            <input type="button" value="+" onClick="document.calculator.ans.value+='+'" />
+            <br />
+            <input type="button" value="4" onClick="document.calculator.ans.value+='4'" />
+            <input type="button" value="5" onClick="document.calculator.ans.value+='5'" />
+            <input type="button" value="6" onClick="document.calculator.ans.value+='6'" />
+            <input type="button" value="-" onClick="document.calculator.ans.value+='-'" />
+            <br />
+            <input type="button" value="7" onClick="document.calculator.ans.value+='7'" />
+            <input type="button" value="8" onClick="document.calculator.ans.value+='8'" />
+            <input type="button" value="9" onClick="document.calculator.ans.value+='9'" />
+            <input type="button" value="*" onClick="document.calculator.ans.value+='*'" />
+            <input type="button" value="/" onClick="document.calculator.ans.value+='/'" />
+            <br />
+            <input type="button" value="0" onClick="document.calculator.ans.value+='0'" />
+            <input type="reset" value="Reset" />
+            <input type="button" value="=" onClick="document.calculator.ans.value=eval(document.calculator.ans.value)" />
+            <br />
+          
+             
+            <strong>Answer is </strong>
+            <input type="textfield" name="ans" value="" />
+        </form>
+    
+
+		<div class="content">
+			<h1>It is a calculator!</h1>
+			<div id="ca_banner1" class="ca_banner ca_banner1">
+				<div class="ca_slide ca_bg1">
+					<div class="ca_zone ca_zone1"><!--Product-->
+						<div class="ca_wrap ca_wrap1">
+							<img src="images/image001.png" class="ca_shown" alt=""/>
+							<img src="images/image002.png" alt="" style="display:none;"/>
+							<img src="images/image003.png" alt="" style="display:none;"/>
+						
+						</div>
+					</div>
+				
+
+				</div>
+			</div>
+
+            <br />
+            <div class="main">
+
+
+
+                <p title="Find us on Facebook" class="openTop openLeft blue" style="position: absolute;right: 20px;bottom: 20px;font-size:30px;">
+                  
+                    <a href="https://www.facebook.com/groups/msaccelerator/"><img src="images/image004.png" title="Follow us" class="spaceTop" alt="Find us on Facebook" width="460" height="210" /></a>
+                </p>
+
+
+            </div>
+
+
+        <!-- The JavaScript -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+		<script src="js/jquery.transform-0.8.0.min.js"></script>
+		<script src="js/jquery.banner.js" type="text/javascript"></script>
+    
+        <script type="text/javascript" src="js/script.js"></script>
+        <script type="text/javascript">
+            $(function() {
+		
+				$('#ca_banner1').banner({
+					steps : [
+						[
+							//1 step:
+							[{"to" : "2"}, {"effect": "zoomOutRotated-zoomInRotated"}],
+							[{"to" : "1"}, {}],
+							[{"to" : "2"}, {"effect": "slideOutRight-slideInRight"}]
+						],
+						[
+							//2 step:
+							[{"to" : "3"}, {"effect":"slideOutTop-slideInTop"}],
+							[{"to" : "1"}, {}],
+							[{"to" : "2"}, {}]
+						],
+						[
+							//3 step:
+							[{"to" : "4"}, {"effect": "zoomOut-zoomIn"}],
+							[{"to" : "2"}, {"effect": "slideOutRight-slideInRight"}],
+							[{"to" : "2"}, {}]
+						],
+						[
+							//4 step
+							[{"to" : "5"}, {"effect": "slideOutBottom-slideInTop"}],
+							[{"to" : "2"}, {}],
+							[{"to" : "3"}, {"effect": "zoomOut-zoomIn"}]
+						],
+						[
+							//5 step
+							[{"to" : "1"}, {"effect": "slideOutLeft-slideInLeft"}],
+							[{"to" : "1"}, {"effect": "zoomOut-zoomIn"}],
+							[{"to" : "1"}, {"effect": "slideOutRight-slideInRight"}]
+						]
+					],
+					total_steps	: 5,
+					speed : 3000
+				});
+				
+				//we want 4 steps/slides for the second banner:
+				$('#ca_banner2').banner({
+					steps : [
+						[
+							//1 step:
+							[{"to" : "2"}, {"effect": "slideOutTop-slideInTop"}],
+							[{"to" : "2"}, {"effect": "slideOutTop-slideInTop"}]
+						],
+						[
+							//2 step:
+							[{"to" : "1"}, {"effect": "slideOutRight-slideInRight"}],
+							[{"to" : "1"}, {"effect": "slideOutLeft-slideInLeft"}],
+						],
+						[
+							//3 step:
+							[{"to" : "2"}, {"effect": "slideOutLeft-slideInLeft"}],
+							[{"to" : "2"}, {"effect": "slideOutRight-slideInRight"}]
+						],
+						[
+							//4 step:
+							[{"to" : "1"}, {"effect":"zoomOutRotated-zoomInRotated"}],
+							[{"to" : "1"}, {"effect": "zoomOutRotated-zoomInRotated"}],
+						]
+					],
+					total_steps	: 4,
+					speed 		: 2000
+				});
+            });
+        </script>
+
+ 
+    </body>
+</html>
